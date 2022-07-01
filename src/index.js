@@ -4,16 +4,41 @@ import $ from 'jquery';
 import './css/styles.css';
 import ExchangeRateService from './js/services/exchange-rate_service.js';
 
-async function conversionTest(amountToConvert, targetConversionCurrency) {
+async function convertUserCurrencyData(
+  amountToConvert,
+  targetConversionCurrency
+) {
   const response = await ExchangeRateService.getCurrentExchangeRate(
     amountToConvert,
     targetConversionCurrency
   );
-  console.log(`Conversion Rate: `, response['conversion_rate']);
-  console.log(`Target Code: `, response['target_code']);
-  console.log(`Conversion Result: `, response['conversion_result']);
+
+  const targetCode = response['target_code'];
+  const conversionRate = response['conversion_rate'];
+  const conversionResult = response['conversion_result'];
+
+  $('#base-currency__amount').text(amountToConvert);
+  $('#target-conversion-rate').text(conversionRate);
+  $('#target-conversion-currency__amount').text(conversionResult);
+  $("h3[class='target-conversion-currency results__currency-title']").text(
+    targetCode
+  );
+  $("span[class='target-conversion-currency']").text(targetCode);
 }
 
 $(document).ready(function () {
-  conversionTest(2, 'EUR');
+  $('form').submit(function (event) {
+    event.preventDefault();
+    const userDataBaseCurrencyAmount = $('#user-input__currency-amount').val();
+    const userDataTargetConversionCurrency = $(
+      '#user-input__target-conversion-currency'
+    ).val();
+
+    convertUserCurrencyData(
+      userDataBaseCurrencyAmount,
+      userDataTargetConversionCurrency
+    );
+
+    document.querySelector('form').reset();
+  });
 });
