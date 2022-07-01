@@ -9,40 +9,68 @@
   <body>
     <header>
       <h1>Currency Exchanger</h1>
-
     </header>
     <main>
-      <p id="instructions" >Fill and submit the currency conversion form to see the converted rates of other currency exchanges against the US Dollar.</p>
+      <p id="instructions">
+        Fill and submit the currency conversion form to see the converted rates
+        of other currency exchanges against the US Dollar.
+      </p>
 
       <form>
         <div class="field-container">
           <label for="user-input__currency-amount">
             Enter the USD amount to convert
           </label>
-          <input type="number" name="user-input__currency-amount" id="user-input__currency-amount" placeholder="5, 25, 125 ...">
+          <input
+            type="number"
+            name="user-input__currency-amount"
+            id="user-input__currency-amount"
+            placeholder="5, 25, 125 ..."
+          />
         </div>
 
         <div class="field-container">
           <label for="user-input__target-conversion-currency">
             Enter the currency-code to convert to
           </label>
-          <input type="text" name="user-input__target-conversion-currency" id="user-input__target-conversion-currency" placeholder="EUR, JYP, MXN ...">
+          <input
+            type="text"
+            name="user-input__target-conversion-currency"
+            id="user-input__target-conversion-currency"
+            placeholder="EUR, JYP, MXN ..."
+          />
         </div>
 
-        <button type="submit" id="button__currency-data-submission">Convert Currency</button>
+        <button type="submit" id="button__currency-data-submission">
+          Convert Currency
+        </button>
       </form>
       <h2>Conversion Results</h2>
       <div id="conversion-results-container">
         <!-- <div id="error-report"></div> -->
         <div id="base-data-block" class="conversion-results-block">
           <h3 class="results__currency-title">USD</h3>
-          <p>USD Amount: <span id="base-currency__amount" class="results__amount"></span></p>
+          <p>
+            USD Amount:
+            <span id="base-currency__amount" class="results__amount"></span>
+          </p>
         </div>
         <div id="conversion-data-block" class="conversion-results-block">
-          <h3 class="target-conversion-currency results__currency-title">Target Currency</h3>
-          <p>Converted Amount: <span id="target-conversion-currency__amount" class="results__amount"></span> </span><span class="target-conversion-currency"></span></p>
-          <p>Conversion Rate: 1 USD = <span id="target-conversion-rate"></span> <span class="target-conversion-currency"></span></p> 
-        </div>
+          <h3 class="target-conversion-currency results__currency-title">
+            Target Currency
+          </h3>
+          <p>
+            Converted Amount:
+            <span
+              id="target-conversion-currency__amount"
+              class="results__amount"
+            ></span>
+            <span class="target-conversion-currency"></span>
+          </p>
+          <p>
+            Conversion Rate: 1 USD = <span id="target-conversion-rate"></span>
+            <span class="target-conversion-currency"></span>
+          </p>
         </div>
       </div>
     </main>
