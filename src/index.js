@@ -13,6 +13,12 @@ async function convertUserCurrencyData(
     targetConversionCurrency
   );
 
+  // window.onerror = function (error) {
+  //   document.getElementById('error-report').innerHTML = error.toString();
+  // };
+
+  console.log('response: ', response);
+
   const targetCode = response['target_code'];
   const conversionRate = response['conversion_rate'];
   const conversionResult = response['conversion_result'];

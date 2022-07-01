@@ -12,7 +12,7 @@ export default class ExchangeRateService {
       }
       return response.json();
     } catch (error) {
-      return error.message;
+      return error;
     }
   }
 }
