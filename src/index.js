@@ -1,8 +1,28 @@
 import $ from 'jquery';
-// import 'bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import ExchangeRateService from './js/services/exchange-rate_service.js';
+
+function getAndDisplayData(response) {
+  console.log(`Something went wrong! Error: ${response}`);
+  // console.log(`Something went wrong! Error: ${Error}`);
+  if (response.result === 'success') {
+    const conversionRate = response['conversion_rate'];
+    $('#target-conversion-rate').text(conversionRate);
+
+    const conversionResult = response['conversion_result'];
+    $('#target-conversion-currency__amount').text(conversionResult);
+
+    const targetCode = response['target_code'];
+    $("h3[class='target-conversion-currency results__currency-title']").text(
+      targetCode
+    );
+    $("span[class='target-conversion-currency']").text(targetCode);
+  } else {
+    console.log(`Something went wrong! Error: ${response}`);
+    $('#error-report').text(`Something went wrong! Error: ${response}`);
+    // return response;
+  }
+}
 
 async function convertUserCurrencyData(
   amountToConvert,
@@ -12,30 +32,16 @@ async function convertUserCurrencyData(
     amountToConvert,
     targetConversionCurrency
   );
-
-  // window.onerror = function (error) {
-  //   document.getElementById('error-report').innerHTML = error.toString();
-  // };
-
-  console.log('response: ', response);
-
-  const targetCode = response['target_code'];
-  const conversionRate = response['conversion_rate'];
-  const conversionResult = response['conversion_result'];
-
-  $('#base-currency__amount').text(amountToConvert);
-  $('#target-conversion-rate').text(conversionRate);
-  $('#target-conversion-currency__amount').text(conversionResult);
-  $("h3[class='target-conversion-currency results__currency-title']").text(
-    targetCode
-  );
-  $("span[class='target-conversion-currency']").text(targetCode);
+  getAndDisplayData(response);
 }
 
 $(document).ready(function () {
   $('form').submit(function (event) {
     event.preventDefault();
+
     const userDataBaseCurrencyAmount = $('#user-input__currency-amount').val();
+    $('#base-currency__amount').text(userDataBaseCurrencyAmount);
+
     const userDataTargetConversionCurrency = $(
       '#user-input__target-conversion-currency'
     ).val();
