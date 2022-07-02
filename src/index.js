@@ -3,8 +3,6 @@ import './css/styles.css';
 import ExchangeRateService from './js/services/exchange-rate_service.js';
 
 function getAndDisplayData(response) {
-  console.log(`Something went wrong! Error: ${response}`);
-  // console.log(`Something went wrong! Error: ${Error}`);
   if (response.result === 'success') {
     const conversionRate = response['conversion_rate'];
     $('#target-conversion-rate').text(conversionRate);
@@ -18,9 +16,7 @@ function getAndDisplayData(response) {
     );
     $("span[class='target-conversion-currency']").text(targetCode);
   } else {
-    console.log(`Something went wrong! Error: ${response}`);
-    $('#error-report').text(`Something went wrong! Error: ${response}`);
-    // return response;
+    $('#error-report').text(`Something went wrong! Status ${response}`);
   }
 }
 
