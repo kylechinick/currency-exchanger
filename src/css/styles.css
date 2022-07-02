@@ -3,12 +3,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: rgb(51, 51, 51);
 }
 
 body {
   /* padding: 0.5rem; */
-  background-color: rgb(112, 128, 144);
+  background-color: rgb(245, 245, 245);
 }
 
 h1,
@@ -52,8 +51,7 @@ button {
 }
 
 #error-report {
-  padding: 1rem 1.5rem;
-  background-color: #333;
+  margin: 1rem 1.5rem;
   font-size: 1.5rem;
   font-family: monospace;
   color: rgb(214, 0, 0);
@@ -74,11 +72,12 @@ button {
 }
 
 #base-data-block {
-  background-color: green;
+  background-color: rgb(112, 128, 144);
 }
 
 #conversion-data-block {
-  background-color: gold;
+  background-color: rgb(51, 51, 51);
+  color: rgb(245, 245, 245);
 }
 
 @media (min-width: 600px) {
