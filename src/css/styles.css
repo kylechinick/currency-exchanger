@@ -1,12 +1,10 @@
 * {
-  /* border: 1px solid greenyellow; */
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  /* padding: 0.5rem; */
   background-color: rgb(245, 245, 245);
 }
 
