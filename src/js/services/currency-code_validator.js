@@ -166,9 +166,8 @@ export default function currencyCodeValidator(userCode) {
   ];
 
   if (!currencyCodesArr.includes(userCode.toUpperCase())) {
-    console.log('Invalid currencyCode. Please provide a valid country code.');
     $('#currency-code-error').text(
-      `Invalid currencyCode. Please provide a valid country code.`
+      `Invalid currency code. Please provide a valid currency code.`
     );
   } else {
     $('#currency-code-error').text('');
