@@ -50,11 +50,18 @@ button {
   padding: 1rem;
 }
 
-#error-report {
-  margin: 1rem 1.5rem;
-  font-size: 1.5rem;
+.error-messaging {
   font-family: monospace;
   color: rgb(214, 0, 0);
+}
+
+#currency-code-error {
+  margin: 0.5rem;
+}
+
+#error-report {
+  margin: 0.5rem 1.5rem;
+  font-size: 1.5rem;
 }
 
 #conversion-results-container {
