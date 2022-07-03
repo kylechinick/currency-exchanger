@@ -1,9 +1,11 @@
 import $ from 'jquery';
 import './css/styles.css';
 import ExchangeRateService from './js/services/exchange-rate_service.js';
+import currencyCodeValidator from './js/services/currency-code_validator';
 
 function getAndDisplayData(response) {
   if (response.result === 'success') {
+    $('#error-report').text('');
     const conversionRate = response['conversion_rate'];
     $('#target-conversion-rate').text(conversionRate);
 
@@ -41,6 +43,8 @@ $(document).ready(function () {
     const userDataTargetConversionCurrency = $(
       '#user-input__target-conversion-currency'
     ).val();
+
+    currencyCodeValidator(userDataTargetConversionCurrency);
 
     convertUserCurrencyData(
       userDataBaseCurrencyAmount,
