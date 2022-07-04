@@ -15,11 +15,11 @@ Convert a specified amount of USD into its value according to another currency.
 
 ## Description
 
-The Currency Exchanger app takes a number value provided by the user and converts that total into its equivilant value in another currency – which is also determined by user input, via a field for the target currency's currency code.
+The Currency Exchanger app takes a number value provided by the user and converts that total into its equivalent value in another currency – which is also determined by user input, via a field for the target currency's currency code.
 
 This app makes use of the [Exchange-Rate API](https://www.exchangerate-api.com/) to power the supply of current exchange rate data.
 
-If the currency code submited by the user does not exist in the Exchange-Rate API's database then an error message communicating this will be displayed to the user. Similarly, if any other type of error occurs when sending the request to, or receiving data from, the API a message will be displayed to the user clarifying that an error has occurred and what that error is.
+If the currency code submitted by the user does not exist in the Exchange-Rate API's database then an error message communicating this will be displayed to the user. Similarly, if any other type of error occurs when sending the request to, or receiving data from, the API a message will be displayed to the user clarifying that an error has occurred and what that error is.
 
 Upon successful submission of a value to convert and a currency to convert to the app will display the USD value provided and both the converted amount per the specified currency as well as the exchange rate itself against that currency.
 
