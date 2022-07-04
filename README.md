@@ -27,7 +27,7 @@ Upon successful submission of a value to convert and a currency to convert to th
 
 #### Basics
 
-1. Clone this repository to your desktop by executing `git clone https://github.com/kylechinick/mr-robogers-neighborhood.git` in your preferred terminal application.
+1. Clone this repository to your desktop by executing `git clone https://github.com/kylechinick/currency-exchanger` in your preferred terminal application.
 2. Execute `git remote -v` in the terminal to view existing remotes and verify successful cloning to your local machine.
 3. Execute `npm install` in the terminal to download required dependency packages.
 4. Execute `npm run build` in the terminal to cause the webpack dependency to populate the provided dist/ folder with an _index.html_ file and a _bundle.js_ file which contains a concatenated and minified version of the project's collected JavaScript code.
